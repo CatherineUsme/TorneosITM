@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using TorneosITM.Clases;
 
 namespace TorneosITM
 {
@@ -10,6 +11,9 @@ namespace TorneosITM
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            //Habilitar el esquema de autenticación, para la validación del token
+            config.MessageHandlers.Add(new TokenValidationHandler());
 
             // Web API routes
             config.MapHttpAttributeRoutes();
