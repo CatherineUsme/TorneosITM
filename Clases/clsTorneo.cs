@@ -73,16 +73,16 @@ namespace TorneosITM.Clases
         public List<Torneo> ConsultarXFecha(DateTime FechaTorneo)
         {
             return dbSuper.Torneos
-                .Where(t => t.FechaTorneo.Date == FechaTorneo.Date)
+                .Where(t => t.FechaTorneo == FechaTorneo)
                 .OrderBy(t => t.idTorneos)
                 .ToList();
         }
 
-        public string Eliminar(int NombreTorneo)
+        public string Eliminar(int IdTorneo)
         {
             try
             {
-                Torneo tor = ConsultarXId(torneo.idTorneos);
+                Torneo tor = ConsultarXId(IdTorneo);
                 if (tor == null)
                 {
                     return "El torneo con el nombre ingresado no existe, no se puede eliminar";
