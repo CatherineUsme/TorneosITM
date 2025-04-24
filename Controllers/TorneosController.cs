@@ -10,6 +10,7 @@ using TorneosITM.Models;
 namespace TorneosITM.Controllers
 {
     [RoutePrefix("api/Torneos")]
+    [Authorize]
     public class TorneosController : ApiController
     {
         [HttpGet]
